@@ -57,7 +57,7 @@ prepara la postulación de &lt;enlace&gt;
 ¿cómo van mis postulaciones?</pre></div>
 <div class="card"><b>3b. Solo con scripts</b><pre>npm run buscar        # vacantes por API
 npm run revisar       # cierres y resultados
-npm run seguimiento   # panel seguimiento.html
+npm run panel         # panel: marcar Ya postulé
 npm run marcar        # marcar enviadas
 npm run habilidades   # qué aprender
 npm run pdf           # CV y carta en PDF</pre></div>

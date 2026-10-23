@@ -194,45 +194,76 @@ input,select{font:inherit;padding:6px 10px;border:1px solid var(--line);border-r
 .docs li::before{margin-right:6px}.listo::before{content:"✓";color:var(--ok)}.falta::before{content:"☐";color:var(--bad)}.en-tramite::before{content:"⏳"}
 table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:.9em}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}.wrap{overflow-x:auto}
+.top{display:flex;justify-content:space-between;gap:8px;margin-bottom:4px}.files{margin:8px 0 0}
+.acciones{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:8px}
+.postule{font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px}.postule input{width:18px;height:18px}
+.link{background:none;border:0;color:var(--muted);font:inherit;font-size:.85em;cursor:pointer;text-decoration:underline}
+.aviso{background:var(--card);border:1px solid var(--warn);border-radius:8px;padding:10px 12px}
+details{margin-top:28px}summary{cursor:pointer;font-weight:600;color:var(--accent)}
 </style></head><body><main>
-<h1>Seguimiento de postulaciones</h1>
+<h1>Mis postulaciones</h1>
 <div class="muted" id="resumen"></div>
-<h2>Para enviar hoy</h2>
-<p class="muted">Para marcar lo que enviaste: <code>npm run marcar</code>. <a href="HABILIDADES.md">Habilidades que piden</a> · <a href="cambios.md">Historial de cambios</a></p>
-<div class="grid" id="hoy"></div>
-<h2>Todas</h2>
-<div class="bar" id="etapas"></div>
-<div class="bar"><input id="q" type="search" placeholder="Buscar oportunidad u organización"><select id="tipo"><option value="">Todos los tipos</option></select>
-<label class="muted"><input type="checkbox" id="faltan"> Solo con documentos faltantes</label></div>
-<div class="grid" id="lista"></div>
-<h2>Documentos compartidos</h2>
-<div class="wrap"><table><thead><tr><th>Documento</th><th>Estado</th><th>Lo piden</th><th>Nota</th></tr></thead><tbody id="docs"></tbody></table></div>
+<p class="aviso" id="aviso" hidden>Para marcar lo que ya postulaste, abre el panel con <code>npm run panel</code>.</p>
+<h2 id="t-listas"></h2>
+<p class="muted">Ordenadas por prioridad: primero lo que cierra pronto, luego mayor puntaje. Al enviar una, marca <b>Ya postulé</b>.</p>
+<div class="grid" id="listas"></div>
+<h2 id="t-espera"></h2>
+<p class="muted">Aún no se pueden enviar: les falta algún documento o la convocatoria todavía no abre.</p>
+<div class="grid" id="espera"></div>
+<details><summary id="t-hist"></summary>
+<p class="muted">Cambia la etapa cuando te respondan (En revisión, Entrevista, Oferta, Rechazada...).</p>
+<div class="grid" id="hist"></div></details>
+<details><summary>Documentos compartidos · <a href="HABILIDADES.md">Habilidades que piden</a> · <a href="cambios.md">Historial de cambios</a></summary>
+<div class="wrap"><table><thead><tr><th>Documento</th><th>Estado</th><th>Lo piden</th><th>Nota</th></tr></thead><tbody id="docs"></tbody></table></div></details>
 </main>
 <script>
 const D=${data};
 const $=(id)=>document.getElementById(id), esc=(s)=>String(s??"").replace(/[&<>"]/g,(c)=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
-let etapa="";
-const n=(e)=>D.fichas.filter((f)=>f.etapa===e).length;
-$("resumen").textContent=D.fichas.length+" postulaciones · sin enviar: "+D.cola.length+" (límite "+D.max+") · enviadas: "+(D.fichas.length-n("Preparada")-n("Vencida")-n("Descartada"))+" · actualizado el "+D.hoy;
-const tarjeta=(f)=>'<article class="card"><span class="etapa">'+esc(f.etapa)+'</span> <span class="meta">'+esc(f.tipo)+(f.puntaje?" · "+f.puntaje+"/10":"")+" · preparada "+esc(f.preparada)+"</span>"+
-    '<h3><a href="'+esc(f.enlace)+'" target="_blank" rel="noopener">'+esc(f.oportunidad)+"</a></h3><div class=meta>"+esc(f.organizacion)+" · cierre: "+esc(f.cierre||"no publicado")+(f.abre?" · abre "+esc(f.abre):"")+
-    ' · <a href="postulaciones/'+esc(f.id)+'/README.pdf">carpeta</a></div>'+f.alertas.map((a)=>'<p class="alert">'+esc(a)+"</p>").join("")+
-    '<ul class="docs">'+f.docs.map((d)=>'<li class="'+d.estado+'">'+esc(d.nombre)+(d.opcional?" (opcional)":"")+(d.disponible_desde?" · ≈ "+esc(d.disponible_desde):"")+"</li>").join("")+"</ul>"+
-    (f.proxima_accion?'<p class="meta"><b>Próxima acción:</b> '+esc(f.proxima_accion)+"</p>":"")+"</article>";
-$("hoy").innerHTML=D.cola.slice(0,3).map((id)=>tarjeta(D.fichas.find((f)=>f.id===id))).join("")||'<p class="muted">Nada pendiente de enviar.</p>';
-const etapas=["",...D.etapas.filter((e)=>D.fichas.some((f)=>f.etapa===e))];
-$("etapas").innerHTML=etapas.map((e)=>'<button class="chip" data-e="'+e+'">'+(e||"Todas")+" ("+D.fichas.filter((f)=>!e||f.etapa===e).length+")</button>").join("");
-$("etapas").onclick=(ev)=>{if(ev.target.dataset.e!==undefined){etapa=ev.target.dataset.e;pintar()}};
-[...new Set(D.fichas.map((f)=>f.tipo))].forEach((t)=>$("tipo").add(new Option(t,t)));
-["q","tipo","faltan"].forEach((id)=>$(id).oninput=pintar);
-function pintar(){
-  document.querySelectorAll("#etapas .chip").forEach((b)=>b.setAttribute("aria-pressed",b.dataset.e===etapa));
-  const q=$("q").value.toLowerCase(), t=$("tipo").value, soloF=$("faltan").checked;
-  const lista=D.fichas.filter((f)=>(!etapa||f.etapa===etapa)&&(!t||f.tipo===t)&&(!q||(f.oportunidad+" "+f.organizacion).toLowerCase().includes(q))&&(!soloF||f.docs.some((d)=>d.estado!=="listo"&&!d.opcional))).reverse();
-  $("lista").innerHTML=lista.map(tarjeta).join("")||'<p class="muted">Nada con esos filtros.</p>';
+const PANEL=location.protocol.startsWith("http"), CERRADAS=["Aceptada","Rechazada","Descartada","Vencida"];
+$("aviso").hidden=PANEL;
+const vencida=(f)=>f.cierre&&f.cierre<D.hoy;
+const porPostular=D.fichas.filter((f)=>f.etapa==="Preparada"&&!vencida(f));
+const listas=D.cola.map((id)=>D.fichas.find((f)=>f.id===id));
+const espera=porPostular.filter((f)=>!D.cola.includes(f.id)).sort((a,b)=>(a.abre||a.cierre||"9").localeCompare(b.abre||b.cierre||"9"));
+const hist=D.fichas.filter((f)=>!porPostular.includes(f)).reverse();
+$("resumen").textContent="Por postular: "+porPostular.length+" · ya postuladas: "+D.fichas.filter((f)=>!["Preparada","Vencida","Descartada"].includes(f.etapa)).length+" · actualizado el "+D.hoy;
+$("t-listas").textContent="Listas para enviar ("+listas.length+")";
+$("t-espera").textContent="Esperando documentos o apertura ("+espera.length+")";
+$("t-hist").textContent="Postuladas y cerradas ("+hist.length+")";
+const archivos=(f)=>["README","cv","carta","respuestas"].map((n)=>'<a href="postulaciones/'+esc(f.id)+"/"+n+'.pdf" target="_blank">'+(n==="README"?"Guía":n==="cv"?"CV":n[0].toUpperCase()+n.slice(1))+"</a>").join(" · ")+' · <a href="postulaciones/'+esc(f.id)+'/" target="_blank">Carpeta</a>';
+function tarjeta(f,modo){
+  const acciones=modo==="hist"
+    ?'<label class="meta">Etapa: <select data-id="'+esc(f.id)+'" class="etapa-sel"'+(PANEL?"":" disabled")+">"+D.etapas.map((e)=>"<option"+(e===f.etapa?" selected":"")+">"+e+"</option>").join("")+"</select></label>"
+    :'<label class="postule"><input type="checkbox" data-id="'+esc(f.id)+'" class="ya"'+(PANEL?"":" disabled")+"> Ya postulé</label>"+(PANEL?' <button class="link descartar" data-id="'+esc(f.id)+'">Descartar</button>':"");
+  return '<article class="card"><div class="top"><span class="etapa">'+esc(f.etapa)+'</span><span class="meta">'+esc(f.tipo)+(f.puntaje?" · "+f.puntaje+"/10":"")+"</span></div>"+
+    '<h3><a href="'+esc(f.enlace)+'" target="_blank" rel="noopener">'+esc(f.oportunidad)+'</a></h3><div class="meta">'+esc(f.organizacion)+" · cierre: "+esc(f.cierre||"no publicado")+(f.abre?" · abre "+esc(f.abre):"")+"</div>"+
+    '<p class="meta files">'+archivos(f)+"</p>"+f.alertas.map((a)=>'<p class="alert">'+esc(a)+"</p>").join("")+
+    (modo==="hist"?"":'<ul class="docs">'+f.docs.filter((d)=>d.estado!=="listo").map((d)=>'<li class="'+d.estado+'">Falta: '+esc(d.nombre)+(d.disponible_desde?" · ≈ "+esc(d.disponible_desde):"")+"</li>").join("")+"</ul>")+
+    (f.proxima_accion&&modo!=="hist"?'<p class="meta"><b>Cómo:</b> '+esc(f.proxima_accion)+"</p>":"")+'<div class="acciones">'+acciones+"</div></article>";
 }
+$("listas").innerHTML=listas.map((f)=>tarjeta(f)).join("")||'<p class="muted">Nada listo para enviar.</p>';
+$("espera").innerHTML=espera.map((f)=>tarjeta(f)).join("")||'<p class="muted">Nada en espera.</p>';
+$("hist").innerHTML=hist.map((f)=>tarjeta(f,"hist")).join("");
+async function guardar(id,etapa,nota){
+  const r=await fetch("/api/etapa",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({id,etapa,nota})});
+  if(!r.ok){alert("No se pudo guardar: "+await r.text());return false}
+  location.reload();return true;
+}
+document.addEventListener("change",async(ev)=>{
+  const el=ev.target;
+  if(el.classList.contains("ya")&&el.checked){
+    const f=D.fichas.find((x)=>x.id===el.dataset.id);
+    if(!confirm("¿Marcar como postulada?\\n\\n"+f.oportunidad+" — "+f.organizacion)){el.checked=false;return}
+    if(!await guardar(f.id,"Enviada","Marcada desde el panel"))el.checked=false;
+  }
+  if(el.classList.contains("etapa-sel"))await guardar(el.dataset.id,el.value,"Cambiada desde el panel");
+});
+document.addEventListener("click",async(ev)=>{
+  if(!ev.target.classList.contains("descartar"))return;
+  const motivo=prompt("¿Por qué la descartas? (opcional)");
+  if(motivo!==null)await guardar(ev.target.dataset.id,"Descartada",motivo||"Descartada desde el panel");
+});
 $("docs").innerHTML=Object.entries(D.catalogo).map(([id,d])=>"<tr><td>"+esc(d.nombre)+'</td><td class="docs"><span class="'+d.estado+'">'+esc(d.estado)+(d.estado!=="listo"&&d.disponible_desde?" (≈ "+esc(d.disponible_desde)+")":"")+"</span></td><td>"+D.fichas.filter((f)=>f.docs.some((x)=>x.doc===id)).length+"</td><td>"+esc(d.nota)+"</td></tr>").join("");
-pintar();
 </script></body></html>
 `)
 }

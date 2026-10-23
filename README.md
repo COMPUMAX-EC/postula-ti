@@ -16,6 +16,7 @@ cómo seguir su estado y qué habilidades aprender según lo que de verdad piden
 |---|---|
 | `npm run buscar` | Vacantes de TI abiertas a Ecuador/LATAM en Get on Board, Workable, Greenhouse y Lever (empresas de `fuentes.json`) → `fuentes/candidatas.json` |
 | `npm run revisar` | Revisa si las vacantes se cerraron, si cambiaron las páginas de becas y si llegó la fecha de resultados → `cambios.md` |
+| `npm run panel` | Panel en el navegador: lo que falta postular, archivos a adjuntar y casilla "Ya postulé" que guarda el cambio (abre http://127.0.0.1:4321) |
 | `npm run seguimiento` | Panel `seguimiento.html` y `SEGUIMIENTO.md`: etapas, cola de envío, documentos que faltan, cierres |
 | `npm run marcar` | Menú para marcar postulaciones como enviadas, en entrevista, rechazadas... |
 | `npm run habilidades` | `HABILIDADES.md`: qué tecnologías piden, quién y cuándo, y tus brechas por prioridad |
