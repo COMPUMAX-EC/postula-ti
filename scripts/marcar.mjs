@@ -1,7 +1,7 @@
 // Menú para marcar postulaciones (enviada, entrevista, rechazada...) sin editar JSON.
 // Muestra las postulaciones abiertas numeradas; escribes los números, eliges la etapa y una nota opcional.
 // Aplica cada cambio con seguimiento.mjs y sube el resultado a GitHub (commit sin coautor).
-// Uso:  node scripts/marcar.mjs      (o el acceso directo "Marcar postulaciones" del escritorio)
+// Uso:  node scripts/marcar.mjs
 import { execFileSync } from "node:child_process"
 import { existsSync, readdirSync, readFileSync } from "node:fs"
 import path from "node:path"
