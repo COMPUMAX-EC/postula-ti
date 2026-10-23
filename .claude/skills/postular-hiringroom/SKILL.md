@@ -6,7 +6,7 @@ description: Guía y ayuda para postular en portales HiringRoom (hiringroom.com/
 
 ## Antes de empezar (2 minutos)
 - Ten a mano `postulaciones/<fecha>/<slug>/cv.pdf` (y `carta.md` si hay mensaje adicional).
-- Revisa que `datos-formulario.md` no tenga [CONFIRMAR] que esta vacante pida (pretensión salarial, disponibilidad).
+- Revisa que `perfil.md` tenga lo que esta vacante pide (pretensión salarial, disponibilidad).
 
 ## El formulario
 Dirección: `https://hiringroom.com/jobs/get_vacancy/<id>/candidates/new` (o desde la oferta, botón **Postularse**).
@@ -27,7 +27,7 @@ Dirección: `https://hiringroom.com/jobs/get_vacancy/<id>/candidates/new` (o des
   elige la provincia primero y luego escribe las primeras letras de tu ciudad.
 - **Cloudflare** muestra "Verifique que es un ser humano": lo marcas tú.
 - Deja **sin marcar** la invitación a Bumeran.
-- Las preguntas de la empresa cambian por vacante (en Pague Ya: familiares en Banco Pichincha / Pague Ya y
+- Las preguntas de la empresa cambian por vacante (por ejemplo: familiares en la empresa y
   horario 8:00–17:00 o 9:00–18:00).
 
 ## Qué hace Claude y qué haces tú
