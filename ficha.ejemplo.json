@@ -1,0 +1,88 @@
+{
+  "oportunidad": "DevOps Engineer - Quito (híbrido)",
+  "organizacion": "Stack Builders",
+  "tipo": "Empleo",
+  "puntaje": 8,
+  "preparada": "2026-10-20",
+  "publicada": "2026-08-20",
+  "abre": null,
+  "cierre": null,
+  "enlace": "https://apply.workable.com/j/CC267177A8",
+  "etapa": "Preparada",
+  "historial": [
+    {
+      "fecha": "2026-10-20",
+      "etapa": "Preparada"
+    }
+  ],
+  "documentos": [
+    {
+      "doc": "cv",
+      "archivo": "cv.pdf"
+    },
+    {
+      "doc": "carta",
+      "archivo": "carta.pdf"
+    },
+    {
+      "doc": "respuestas",
+      "archivo": "respuestas.md"
+    }
+  ],
+  "proxima_accion": "Postular en Workable (todo en inglés)",
+  "notas": "",
+  "habilidades": [
+    {
+      "id": "linux",
+      "tipo": "obligatoria"
+    },
+    {
+      "id": "git",
+      "tipo": "obligatoria"
+    },
+    {
+      "id": "bash",
+      "tipo": "obligatoria"
+    },
+    {
+      "id": "cicd",
+      "tipo": "obligatoria"
+    },
+    {
+      "id": "nube",
+      "tipo": "obligatoria"
+    },
+    {
+      "id": "redes-tcpip",
+      "tipo": "obligatoria"
+    },
+    {
+      "id": "docker",
+      "tipo": "obligatoria"
+    },
+    {
+      "id": "observabilidad",
+      "tipo": "obligatoria"
+    },
+    {
+      "id": "iam-seguridad-nube",
+      "tipo": "obligatoria"
+    },
+    {
+      "id": "ingles",
+      "tipo": "obligatoria"
+    },
+    {
+      "id": "terraform",
+      "tipo": "deseable"
+    },
+    {
+      "id": "kubernetes",
+      "tipo": "deseable"
+    },
+    {
+      "id": "aws",
+      "tipo": "deseable"
+    }
+  ]
+}

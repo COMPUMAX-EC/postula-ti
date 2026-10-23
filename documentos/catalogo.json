@@ -1,0 +1,97 @@
+{
+  "_ayuda": "Documentos que comparten todas las postulaciones. Cada postulación los nombra por su id en ficha.json. Si el archivo existe (los escaneos van en documentos/privados/, que no se sube a GitHub), el documento cuenta como listo; si no, vale el campo estado: falta | en-tramite | listo. disponible_desde: fecha en que se espera tenerlo.",
+  "documentos": {
+    "cedula": {
+      "nombre": "Cédula de identidad (escaneo a color, ambos lados)",
+      "archivo": "documentos/privados/cedula.pdf",
+      "estado": "falta"
+    },
+    "pasaporte": {
+      "nombre": "Pasaporte vigente (página de datos)",
+      "archivo": "documentos/privados/pasaporte.pdf",
+      "estado": "falta"
+    },
+    "foto": {
+      "nombre": "Foto tipo pasaporte (fondo blanco)",
+      "archivo": "documentos/privados/foto.jpg",
+      "estado": "falta"
+    },
+    "titulo": {
+      "nombre": "Título de tercer nivel registrado en la SENESCYT",
+      "archivo": "documentos/privados/titulo.pdf",
+      "estado": "falta"
+    },
+    "titulo-en": {
+      "nombre": "Traducción oficial al inglés del título",
+      "archivo": "documentos/privados/titulo-en.pdf",
+      "estado": "falta",
+      "nota": "En Ecuador: apostilla del original en Cancillería y traducción por un perito traductor acreditado por el Consejo de la Judicatura. Pregunta antes si tu universidad emite el documento en inglés."
+    },
+    "record": {
+      "nombre": "Récord académico firmado y sellado (con promedio y escala de notas)",
+      "archivo": "documentos/privados/record.pdf",
+      "estado": "falta"
+    },
+    "record-en": {
+      "nombre": "Traducción oficial al inglés del récord académico",
+      "archivo": "documentos/privados/record-en.pdf",
+      "estado": "falta",
+      "nota": "En Ecuador: apostilla del original en Cancillería y traducción por un perito traductor acreditado por el Consejo de la Judicatura. Pregunta antes si tu universidad emite el documento en inglés."
+    },
+    "descripciones-materias": {
+      "nombre": "Descripciones de las materias (sílabos) de la UPEC",
+      "archivo": "documentos/privados/descripciones-materias.pdf",
+      "estado": "falta"
+    },
+    "ielts": {
+      "nombre": "Certificado de inglés (IELTS Academic, TOEFL iBT o Cambridge)",
+      "archivo": "documentos/privados/ielts.pdf",
+      "estado": "falta"
+    },
+    "recomendacion-1": {
+      "nombre": "Carta de recomendación 1",
+      "archivo": "documentos/privados/recomendacion-1.pdf",
+      "estado": "falta"
+    },
+    "recomendacion-2": {
+      "nombre": "Carta de recomendación 2",
+      "archivo": "documentos/privados/recomendacion-2.pdf",
+      "estado": "falta"
+    },
+    "certificados-laborales": {
+      "nombre": "Certificados laborales",
+      "archivo": "documentos/privados/certificados-laborales.pdf",
+      "estado": "falta"
+    },
+    "comprobante-residencia": {
+      "nombre": "Comprobante de residencia (planilla de servicio básico)",
+      "archivo": "documentos/privados/comprobante-residencia.pdf",
+      "estado": "falta"
+    },
+    "cv-es": {
+      "nombre": "CV base en español (versión maestra)",
+      "archivo": "documentos/cv-es.md",
+      "estado": "falta"
+    },
+    "cv-en": {
+      "nombre": "CV base en inglés (versión maestra)",
+      "archivo": "documentos/cv-en.md",
+      "estado": "falta"
+    },
+    "carta-motivacion": {
+      "nombre": "Carta de motivación base en inglés (versión maestra)",
+      "archivo": "documentos/carta-motivacion.md",
+      "estado": "falta"
+    }
+  },
+  "_propios": "Documentos que se hacen por postulación (no se comparten): cv, carta, respuestas, correo, video, carta-admision, autodeclaracion. Su archivo vive en la carpeta de la postulación.",
+  "propios": {
+    "cv": "CV adaptado (cv.pdf)",
+    "carta": "Carta de presentación o motivación adaptada (carta.pdf)",
+    "respuestas": "Respuestas del formulario (respuestas.md)",
+    "correo": "Correo listo para enviar (correo.md)",
+    "video": "Video de motivación",
+    "carta-admision": "Carta de admisión de la universidad",
+    "autodeclaracion": "Autodeclaración firmada"
+  }
+}

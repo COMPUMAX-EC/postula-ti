@@ -1,0 +1,15 @@
+node_modules/
+documentos/privados/*
+!documentos/privados/LEEME.md
+# tus datos personales: no los subas si haces público tu fork
+perfil.md
+postulaciones/*/
+fuentes/candidatas.json
+# archivos generados con tus datos
+registro.md
+SEGUIMIENTO.md
+seguimiento.html
+HABILIDADES.md
+cambios.md
+habilidades/plan.md
+documentos/pedidos/

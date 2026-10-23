@@ -1,0 +1,19 @@
+{
+  "name": "postula-ti",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "buscar": "node scripts/buscar-ofertas.mjs",
+    "pdf": "node scripts/pdf.mjs",
+    "seguimiento": "node scripts/seguimiento.mjs",
+    "revisar": "node scripts/revisar.mjs",
+    "habilidades": "node scripts/habilidades.mjs",
+    "marcar": "node scripts/marcar.mjs",
+    "plataformas": "node scripts/plataformas.mjs"
+  },
+  "dependencies": {
+    "marked": "14.1.3",
+    "playwright-core": "1.48.2"
+  },
+  "description": "Herramientas para buscar, preparar y seguir postulaciones de TI en Ecuador y LATAM"
+}

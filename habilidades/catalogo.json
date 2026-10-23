@@ -1,0 +1,340 @@
+{
+  "_ayuda": "Catálogo normalizado de tecnologías y habilidades que piden las convocatorias. Cada ficha.json las nombra por id en `habilidades` ({id, tipo: obligatoria|deseable}). estado es tu nivel: tengo | parcial | falta | en-curso. Al aprender algo, cambia estado y agrega evidencia (repo, certificado). Sin evidencia no pasa a 'tengo'.",
+  "habilidades": {
+    "python": {
+      "nombre": "Python",
+      "categoria": "Lenguajes",
+      "estado": "falta"
+    },
+    "sql": {
+      "nombre": "SQL (relacional: MySQL, PostgreSQL)",
+      "categoria": "Lenguajes",
+      "estado": "falta"
+    },
+    "typescript": {
+      "nombre": "TypeScript",
+      "categoria": "Lenguajes",
+      "estado": "falta"
+    },
+    "javascript": {
+      "nombre": "JavaScript (ES6+)",
+      "categoria": "Lenguajes",
+      "estado": "falta"
+    },
+    "bash": {
+      "nombre": "Bash / scripting de shell",
+      "categoria": "Lenguajes",
+      "estado": "falta"
+    },
+    "csharp": {
+      "nombre": "C# / .NET",
+      "categoria": "Lenguajes",
+      "estado": "falta"
+    },
+    "etl-elt": {
+      "nombre": "Pipelines ETL/ELT",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "data-warehouse": {
+      "nombre": "Data warehouse en la nube (BigQuery, Snowflake, Redshift)",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "big-data": {
+      "nombre": "Big Data / datos estructurados y no estructurados",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "spark": {
+      "nombre": "Apache Spark / PySpark",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "kafka": {
+      "nombre": "Kafka / ingesta en streaming",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "streaming": {
+      "nombre": "Patrones batch y streaming",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "etl-empresarial": {
+      "nombre": "ETL empresarial (SSIS, Pentaho, Azure Data Factory)",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "airflow": {
+      "nombre": "Orquestación con Airflow / Cloud Composer",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "dbt": {
+      "nombre": "dbt",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "gcp-dataflow-pubsub": {
+      "nombre": "GCP Dataflow / Pub/Sub",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "medallion": {
+      "nombre": "Arquitectura Medallion (bronze/silver/gold)",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "modelado-dimensional": {
+      "nombre": "Modelado dimensional (estrella, SCD)",
+      "categoria": "Ingeniería de datos",
+      "estado": "falta"
+    },
+    "calidad-datos": {
+      "nombre": "Calidad de datos",
+      "categoria": "Gobierno de datos",
+      "estado": "falta"
+    },
+    "gobierno-datos": {
+      "nombre": "Gobierno de datos, metadatos y linaje (DAMA-DMBOK)",
+      "categoria": "Gobierno de datos",
+      "estado": "falta"
+    },
+    "nosql": {
+      "nombre": "Bases NoSQL (en general)",
+      "categoria": "Bases de datos",
+      "estado": "falta"
+    },
+    "mongodb": {
+      "nombre": "MongoDB",
+      "categoria": "Bases de datos",
+      "estado": "falta"
+    },
+    "dynamodb": {
+      "nombre": "DynamoDB",
+      "categoria": "Bases de datos",
+      "estado": "falta"
+    },
+    "elasticsearch": {
+      "nombre": "Elasticsearch / OpenSearch",
+      "categoria": "Bases de datos",
+      "estado": "falta"
+    },
+    "oracle": {
+      "nombre": "Oracle",
+      "categoria": "Bases de datos",
+      "estado": "falta"
+    },
+    "hive": {
+      "nombre": "Hive",
+      "categoria": "Bases de datos",
+      "estado": "falta"
+    },
+    "analisis-datos": {
+      "nombre": "Análisis de datos para negocio",
+      "categoria": "BI y analítica",
+      "estado": "falta"
+    },
+    "looker-studio": {
+      "nombre": "Looker Studio",
+      "categoria": "BI y analítica",
+      "estado": "falta"
+    },
+    "power-bi": {
+      "nombre": "Power BI",
+      "categoria": "BI y analítica",
+      "estado": "falta"
+    },
+    "excel": {
+      "nombre": "Excel avanzado / Power Query",
+      "categoria": "BI y analítica",
+      "estado": "falta"
+    },
+    "analitica-web": {
+      "nombre": "Analítica web (GTM, GA4, Meta Pixel, Adobe Analytics)",
+      "categoria": "BI y analítica",
+      "estado": "falta"
+    },
+    "apis-rest": {
+      "nombre": "Diseño e integración de APIs REST",
+      "categoria": "Backend y web",
+      "estado": "falta"
+    },
+    "fastapi": {
+      "nombre": "FastAPI",
+      "categoria": "Backend y web",
+      "estado": "falta"
+    },
+    "webhooks-integraciones": {
+      "nombre": "Webhooks e integraciones con terceros",
+      "categoria": "Backend y web",
+      "estado": "falta"
+    },
+    "react-nextjs": {
+      "nombre": "React / Next.js",
+      "categoria": "Backend y web",
+      "estado": "falta"
+    },
+    "html-dom": {
+      "nombre": "HTML5 y manipulación del DOM",
+      "categoria": "Backend y web",
+      "estado": "falta"
+    },
+    "nestjs": {
+      "nombre": "NestJS / Node.js backend",
+      "categoria": "Backend y web",
+      "estado": "falta"
+    },
+    "jwt-oauth2": {
+      "nombre": "Autenticación JWT / OAuth2",
+      "categoria": "Backend y web",
+      "estado": "falta"
+    },
+    "arquitectura-hexagonal-ddd": {
+      "nombre": "Arquitectura hexagonal y DDD",
+      "categoria": "Backend y web",
+      "estado": "falta"
+    },
+    "pytest": {
+      "nombre": "Pruebas automatizadas (Pytest, Jest)",
+      "categoria": "Backend y web",
+      "estado": "falta"
+    },
+    "acdl": {
+      "nombre": "Adobe Client Data Layer",
+      "categoria": "Backend y web",
+      "estado": "falta"
+    },
+    "git": {
+      "nombre": "Git y flujos colaborativos (PR, code review)",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "cicd": {
+      "nombre": "CI/CD (GitHub Actions)",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "nube": {
+      "nombre": "Nube pública (cualquiera)",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "gcp": {
+      "nombre": "Google Cloud Platform",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "aws": {
+      "nombre": "AWS (SNS, SQS, EventBridge...)",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "azure": {
+      "nombre": "Azure",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "docker": {
+      "nombre": "Docker / contenedores",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "kubernetes": {
+      "nombre": "Kubernetes",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "terraform": {
+      "nombre": "Terraform / infraestructura como código",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "linux": {
+      "nombre": "Linux / administración de servidores",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "observabilidad": {
+      "nombre": "Observabilidad (Grafana, Prometheus, alertas)",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "iam-seguridad-nube": {
+      "nombre": "IAM y manejo de secretos en la nube",
+      "categoria": "DevOps y nube",
+      "estado": "falta"
+    },
+    "redes-tcpip": {
+      "nombre": "Redes (TCP/IP, DNS, HTTP)",
+      "categoria": "Redes y seguridad",
+      "estado": "falta"
+    },
+    "seguridad-informatica": {
+      "nombre": "Ciberseguridad",
+      "categoria": "Redes y seguridad",
+      "estado": "falta"
+    },
+    "comunicaciones-inalambricas": {
+      "nombre": "Comunicaciones inalámbricas",
+      "categoria": "Redes y seguridad",
+      "estado": "falta"
+    },
+    "llm-integracion": {
+      "nombre": "Integración de LLM (salidas estructuradas, function calling)",
+      "categoria": "IA",
+      "estado": "falta"
+    },
+    "agentes-ia": {
+      "nombre": "Agentes / multiagentes de IA",
+      "categoria": "IA",
+      "estado": "falta"
+    },
+    "rag": {
+      "nombre": "RAG",
+      "categoria": "IA",
+      "estado": "falta"
+    },
+    "llmops-evaluacion": {
+      "nombre": "LLMOps y evaluación de LLM",
+      "categoria": "IA",
+      "estado": "falta"
+    },
+    "guardrails": {
+      "nombre": "Guardrails y seguridad de IA",
+      "categoria": "IA",
+      "estado": "falta"
+    },
+    "vision-computador": {
+      "nombre": "Visión por computador",
+      "categoria": "IA",
+      "estado": "falta"
+    },
+    "n8n-make-zapier": {
+      "nombre": "Automatización no-code (n8n, Make, Zapier)",
+      "categoria": "Automatización",
+      "estado": "falta"
+    },
+    "ingles": {
+      "nombre": "Inglés profesional / certificado",
+      "categoria": "Idiomas y académico",
+      "estado": "falta"
+    },
+    "matematicas": {
+      "nombre": "Matemáticas (álgebra lineal, probabilidad, discreta)",
+      "categoria": "Idiomas y académico",
+      "estado": "falta"
+    },
+    "banca-finanzas": {
+      "nombre": "Dominio banca / fintech",
+      "categoria": "Dominio de negocio",
+      "estado": "falta"
+    },
+    "fraude": {
+      "nombre": "Detección de fraude (tipologías)",
+      "categoria": "Dominio de negocio",
+      "estado": "falta"
+    }
+  }
+}

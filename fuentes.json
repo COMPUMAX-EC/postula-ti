@@ -1,0 +1,10 @@
+{
+  "_comentario": "Fuentes que lee scripts/buscar-ofertas.mjs. Agrega empresas cuando encuentres su tablero oficial con vacantes abiertas a Ecuador o LATAM remoto.",
+  "getonbrd": {
+    "categorias": ["programming", "data-science-analytics", "sysadmin-devops-qa", "cybersecurity", "machine-learning-ai", "mobile-developer"],
+    "senioridadMaxima": 4
+  },
+  "workable": ["devsu", "stackbuilders"],
+  "greenhouse": ["sezzle", "nimblegravity"],
+  "lever": ["payjoy"]
+}
