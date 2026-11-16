@@ -1,47 +1,50 @@
 # Postula TI
 
-Herramientas abiertas para profesionales de TI en Ecuador y LATAM: dónde postular, cómo preparar cada postulación,
-cómo seguir su estado y qué habilidades aprender según lo que de verdad piden las vacantes.
+🇬🇧 **English** · 🇪🇨 [Español](README.es.md)
 
-**Página con el directorio de plataformas:** https://compumax-ec.github.io/postula-ti/
+Open tools for IT professionals in Ecuador and Latin America: where to apply, how to prepare each application, how to
+track its status and which skills to learn based on what job openings actually ask for. The tools, the Claude Code
+skills and the documents they produce are in Spanish.
 
-## Qué incluye
-- **`plataformas.json`**: 41 plataformas verificadas (bolsas de empleo, empresas grandes, sector público, bancos y
-  cooperativas, becas), con cómo postular y si se pueden leer automáticamente.
-- **Skills de Claude Code** (`.claude/skills/`): `buscar-vacantes`, `preparar-postulacion`,
+**Page with the platform directory:** https://compumax-ec.github.io/postula-ti/
+
+## What it includes
+- **`plataformas.json`**: 41 verified platforms (job boards, large companies, public sector, banks and cooperatives,
+  scholarships), with how to apply and whether they can be read automatically.
+- **Claude Code skills** (`.claude/skills/`): `buscar-vacantes`, `preparar-postulacion`,
   `seguimiento-postulaciones`, `mapa-habilidades`, `documentos-postulacion`.
-- **Scripts** (Node.js 20+, sin cuentas ni claves):
+- **Scripts** (Node.js 20+, no accounts or keys):
 
-| Comando | Qué hace |
+| Command | What it does |
 |---|---|
-| `npm run buscar` | Vacantes de TI abiertas a Ecuador/LATAM en Get on Board, Workable, Greenhouse y Lever (empresas de `fuentes.json`) → `fuentes/candidatas.json` |
-| `npm run revisar` | Revisa si las vacantes se cerraron, si cambiaron las páginas de becas y si llegó la fecha de resultados → `cambios.md` |
-| `npm run panel` | Panel en el navegador: lo que falta postular, archivos a adjuntar y casilla "Ya postulé" que guarda el cambio (abre http://127.0.0.1:4321) |
-| `npm run seguimiento` | Panel `seguimiento.html` y `SEGUIMIENTO.md`: etapas, cola de envío, documentos que faltan, cierres |
-| `npm run marcar` | Menú para marcar postulaciones como enviadas, en entrevista, rechazadas... |
-| `npm run habilidades` | `HABILIDADES.md`: qué tecnologías piden, quién y cuándo, y tus brechas por prioridad |
-| `npm run pdf` | Convierte CV, cartas y documentos `.md` a PDF (CV y carta en una página) |
-| `npm run plataformas` | Regenera la página `docs/index.html` |
+| `npm run buscar` | IT openings available to Ecuador/LATAM on Get on Board, Workable, Greenhouse and Lever (companies in `fuentes.json`) → `fuentes/candidatas.json` |
+| `npm run revisar` | Checks whether openings closed, whether scholarship pages changed and whether the results date arrived → `cambios.md` |
+| `npm run panel` | Browser dashboard: what is left to apply to, files to attach, and an "I applied" checkbox that saves the change (opens http://127.0.0.1:4321) |
+| `npm run seguimiento` | `seguimiento.html` dashboard and `SEGUIMIENTO.md`: stages, sending queue, missing documents, deadlines |
+| `npm run marcar` | Menu to mark applications as sent, interviewing, rejected... |
+| `npm run habilidades` | `HABILIDADES.md`: which technologies are asked for, by whom and when, and your gaps by priority |
+| `npm run pdf` | Converts CVs, cover letters and `.md` documents to PDF (CV and letter on one page) |
+| `npm run plataformas` | Regenerates the `docs/index.html` page |
 
-## Empezar
+## Getting started
 ```bash
 git clone https://github.com/COMPUMAX-EC/postula-ti.git
 cd postula-ti
 npm ci
 ```
-1. Copia `perfil.ejemplo.md` como `perfil.md` y complétalo (no se sube a GitHub).
-2. Con Claude Code: abre la carpeta y pide "busca vacantes para mí" o "prepara la postulación de <enlace>".
-   Sin Claude: usa los comandos de arriba; cada postulación es una carpeta en `postulaciones/<fecha>/<slug>/` con
-   un `ficha.json` como `ficha.ejemplo.json`.
-3. Guarda tus escaneos (cédula, título, certificados) en `documentos/privados/` con el nombre de
-   `documentos/catalogo.json`: esa carpeta tampoco se sube.
+1. Copy `perfil.ejemplo.md` to `perfil.md` and fill it in (it is not pushed to GitHub).
+2. With Claude Code: open the folder and ask "busca vacantes para mí" (find openings for me) or "prepara la
+   postulación de <link>" (prepare the application for <link>). Without Claude: use the commands above; each
+   application is a folder in `postulaciones/<date>/<slug>/` with a `ficha.json` like `ficha.ejemplo.json`.
+3. Keep your scans (ID card, degree, certificates) in `documentos/privados/` with the names from
+   `documentos/catalogo.json`: that folder is not pushed either.
 
-## Principios
-- Nada se envía solo: las herramientas preparan, tú postulas.
-- No se inventan datos: todo sale de tu `perfil.md`.
-- Sin iniciar sesión en ningún portal.
+## Principles
+- Nothing is sent on its own: the tools prepare, you apply.
+- No invented data: everything comes from your `perfil.md`.
+- No logging in to any portal.
 
-## Contribuir
-¿Falta una plataforma? Agrégala a `plataformas.json` y abre un pull request.
+## Contributing
+Missing a platform? Add it to `plataformas.json` and open a pull request.
 
-Hecho por [DevIALabs](https://github.com/COMPUMAX-EC). Licencia MIT.
+Made by [DevIALabs](https://github.com/COMPUMAX-EC). MIT license.
