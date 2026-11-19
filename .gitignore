@@ -1,6 +1,6 @@
 node_modules/
 documentos/privados/*
-!documentos/privados/LEEME.md
+!documentos/privados/README.md
 # tus datos personales: no los subas si haces público tu fork
 perfil.md
 postulaciones/*/
